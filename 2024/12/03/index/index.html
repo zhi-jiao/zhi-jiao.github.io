@@ -105,7 +105,66 @@
     }
   </script>
 </header>
-    
+    <main class="main-body">
+  <div class="toc-container">
+    <div class="toc-toggle">
+      <i id="toc-b-icon" class="iconfont icon-liebiao-01" onclick="toggleShow()"></i>
+    </div>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#About-Me"><span class="toc-number">1.</span> <span class="toc-text">About Me</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Now"><span class="toc-number">2.</span> <span class="toc-text">Now</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interest"><span class="toc-number">3.</span> <span class="toc-text">Interest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Contact"><span class="toc-number">4.</span> <span class="toc-text">Contact</span></a></li></ol>
+  </div>
+  
+  <script>
+    var show = false
+    function toggleShow() {
+      if (show) {
+        document.getElementsByClassName('toc')[0].className = 'toc'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-liebiao-01'
+      } else {
+        document.getElementsByClassName('toc')[0].className = 'toc show'
+        document.getElementById('toc-b-icon').className = 'iconfont icon-quxiao-01'
+      }
+      show = !show
+    }
+    document.getElementsByClassName('toc')[0].onclick = toggleShow
+  </script>
+  
+  <div class="article-header">
+    <h1 class="article-title">about</h1>
+    <div class="article-details">
+      <div class="article-post-date"><span>Posted at </span> 2024-12-03</div>
+      <div class="article-tags">
+        
+      </div>
+    </div>
+  </div>
+  <div class="article">
+  
+  <h3 id="About-Me"><a href="#About-Me" class="headerlink" title="About Me"></a>About Me</h3><ul>
+<li>Currently studying at Lanzhou University</li>
+<li>Born on 6.1,2003</li>
+<li>Programming is mainly done using <strong>python</strong> and <strong>C</strong></li>
+<li>Love music, especially FDDM</li>
+</ul>
+<h3 id="Now"><a href="#Now" class="headerlink" title="Now"></a>Now</h3><p>studying for a master’s degree(AI) at DSLab in Lanzhou University now.</p>
+<h3 id="Interest"><a href="#Interest" class="headerlink" title="Interest"></a>Interest</h3><ul>
+<li>Deep Learning</li>
+<li>LLM</li>
+<li>Time Series Forecasting</li>
+</ul>
+<h3 id="Contact"><a href="#Contact" class="headerlink" title="Contact"></a>Contact</h3><ul>
+<li>My blog for learning -&gt; zhi-jiao.github.io</li>
+<li>Mail : <a href="mailto:&#122;&#104;&#x73;&#117;&#x32;&#x30;&#64;&#108;&#122;&#117;&#x2e;&#x65;&#100;&#117;&#46;&#x63;&#x6e;">&#122;&#104;&#x73;&#117;&#x32;&#x30;&#64;&#108;&#122;&#117;&#x2e;&#x65;&#100;&#117;&#46;&#x63;&#x6e;</a></li>
+</ul>
+
+</div>
+  <o3o key="mizore" api="https://o3o.mizore.site:2333"></o3o>
+  
+<script src="/o3o/o3o.js"></script>
+
+  
+<link rel="stylesheet" href="/css/o3o.css">
+
+</main>
     <footer>
   <div class="footer-info">© 2018-2022 Zhijiao | Powerd by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a
       target="_blank" rel="noopener" href="https://github.com/mizoreyo/hexo-theme-insnow">Insnow</a> | <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">蜀ICP备20005398号</a></div>
