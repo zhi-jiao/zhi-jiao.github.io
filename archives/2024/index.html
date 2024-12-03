@@ -1,185 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="light">
 <head>
   <meta charset="utf-8">
   
+  <title>
+    
+    Hexo
+    
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="me" href="https://mas.uniiem.com/@mizore" />
   
-  <title>Archives: 2024 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2024/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+
   
+<link rel="stylesheet" href="/css/prism/material-light.css">
+
   
-    <link rel="shortcut icon" href="/favicon.png">
+<link rel="stylesheet" href="/css/prism/material-dark.css">
+
   
+<script src="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
   
+<link rel="stylesheet" href="https://cdn.staticfile.org/prism/1.17.1/plugins/line-numbers/prism-line-numbers.min.css">
+
   
 <link rel="stylesheet" href="/css/style.css">
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC:wght@300&display=swap.css">
 
   
-  
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
 <meta name="generator" content="Hexo 7.3.0"></head>
+<script>
+  function setIsNight(isNight) {
+    localStorage.setItem('isNight', isNight)
+  }
+
+  function getIsNight() {
+    return localStorage.getItem('isNight')
+  }
+
+  function switchTheme() {
+    let isNight = getIsNight()
+    if (isNight === 'false') {
+      document.documentElement.className = 'dark'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '😴'
+      setIsNight('true')
+    } else {
+      document.documentElement.className = 'light'
+      document.getElementsByClassName('theme-switcher')[0].textContent = '😳'
+      setIsNight('false')
+    }
+  }
+
+  let isNight = getIsNight()
+  if (isNight == null) {
+    isNight = 'false'
+    setIsNight('false')
+  }
+  if (isNight === 'false') {
+    document.documentElement.className = 'light'
+  } else {
+    document.documentElement.className = 'dark'
+  }
+</script>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
+  <div class="show-area">
+    <header>
+  <ul class="nav">
+    <li class="nav-child">
+      <a href="/">首页</a>
+    </li>
+    <li class="nav-child">
+      <a href="/categories">分类</a>
+    </li>
+    <li class="nav-child">
+      <a href="/tags">标签</a>
+    </li>
+    <li class="nav-child">
+      <a href="/about">关于</a>
+    </li>
+    <li class="nav-child">
+      <a href="/collection">收藏</a>
+    </li>
+    <li class="nav-child">
+      <a href="/board">留言</a>
+    </li>
+  </ul>
+  <div class="theme-switcher" onclick="switchTheme()">😳</div>
+  <script>
+    if (isNight === 'false') {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '😳'
+    } else {
+      document.getElementsByClassName('theme-switcher')[0].textContent = '😴'
+    }
+  </script>
 </header>
-
-      <div class="outer">
-        <section id="main">
+    <main class="main-body">
+  <h2 class="blog-title">Hexo</h2>
+  <p class="blog-desc"></p>
+  <p class="blog-info"></p>
+  <h3 class="posts-header">Recent Posts</h3>
+  <ul class="post-list">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2024/12/02/hello-world/" class="archive-article-date">
-  <time class="dt-published" datetime="2024-12-02T15:38:07.593Z" itemprop="datePublished">Dec 2</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/12/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li></ul>
+  <li class="post-list-child">
+    <div class="post-list-left">
+      <div class="post-list-symbol">🚩</div>
+      <a href="/2024/12/02/hello-world/">Hello World</a>
     </div>
-  </div>
-
-
+    <span class="post-list-date">
+      2024-12-02
+    </span>
+  </li>
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/12/02/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+</ul> 
+  
+</main>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
+    <footer>
+  <div class="footer-info">© 2018-2022 John Doe | Powerd by <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> | Theme <a
+      target="_blank" rel="noopener" href="https://github.com/mizoreyo/hexo-theme-insnow">Insnow</a> | <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">蜀ICP备20005398号</a></div>
+  <div class="footer-info">
+    <a class="footer-i" target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/mizoreyo/static/images/wechat.PNG"><i class="iconfont icon-wechat"></i></a>
+    <a class="footer-i" target="_blank" rel="noopener" href="https://github.com/mizoreyo"><i class="iconfont icon-github-fill"></i></a>
+    <a class="footer-i" href="/atom.xml"><i class="iconfont icon-rss"></i></a>
+    <a class="footer-i" href="mailto:mizoreyo@outlook.com"><i class="iconfont icon-mail"></i></a>
   </div>
 </footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
   </div>
 </body>
+
+
 </html>
