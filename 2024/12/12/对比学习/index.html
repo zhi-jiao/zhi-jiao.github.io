@@ -9,18 +9,16 @@
   
   <!-- 用于搜索引擎的文章摘要 -->
   
-  <meta name="description" content="nothing to say" />
-  
   
   
   <title>
     
-      archive_a: 2025 
+      对比学习 
       
       
       |
     
-     Zhijiao
+     ZhiJiao
   </title>
 
   
@@ -110,50 +108,157 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2025</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">对比学习</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2024-12-12 16:32:54
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" title="对比学习">
+                    #对比学习
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h5 id="Contrastive-learning"><a href="#Contrastive-learning" class="headerlink" title="Contrastive learning"></a>Contrastive learning</h5><p>对比学习是一种学习方法，侧重于通过对比正反两方面的实例来提取有意义的表征。它利用的假设是，在学习到的嵌入空间中，相似的实例应靠得更近，而不相似的实例应离得更远。通过将学习作为一项辨别任务，对比学习允许模型捕捉数据中的相关特征和相似性。</p>
+<p><strong>在CLIP, BLIP这些大模型中通常使用对比学习的方式进行预训练。</strong></p>
+<p>对比学习主要包括两个分支，分别是<strong>监督对比学习（Supervised Contrastive Learning, SCL）</strong> 和 **自监督对比学习(Self Supervised Contrastive Learning, SSCL)**。</p>
+<h5 id="infoNCE-Loss-Function"><a href="#infoNCE-Loss-Function" class="headerlink" title="infoNCE Loss Function"></a>infoNCE Loss Function</h5><p>InfoNCE Loss（Noise Contrastive Estimation Loss）是一种用于自监督学习的损失函数，通常用于学习特征表示或者表征学习。不同于交叉熵损失函数，它基于信息论的思想，通过对比正样本和负样本的相似性来学习模型参数。<br>公式如下：</p>
+<p>$<br>\text{InfoNCE Loss} &#x3D; - \frac{1}{N}\sum_{i&#x3D;1}^N \log (\frac{\text{exp}^{(\frac{q_i · k_{i+}}{\tau})}}{\sum_{j&#x3D;1}^N \text{exp} (\frac{q_i · k_{j-}}{\tau})} )<br>$</p>
+<p>$N$ -&gt; 样本数量<br>$q_i$ -&gt; 查询样本$i$的编码向量<br>$k_{i+}$ -&gt; 是与查询样本$i$相对应的正样本的编码向量<br>$k_{i-}$ -&gt; 是与查询样本$i$不对应的负样本的编码向量<br>$\tau$ -&gt; 温度系数, 用于调节相似度得分的分布</p>
+<p>在训练的过程中，其实就是希望正样本之间的距离越来越近，负样本之间的距离越来越远。</p>
+<p>infoNCE loss 在某种情况是是基于交叉熵函数的。</p>
+<p>交叉熵损失函数: </p>
+<p>$<br>\text{CrossEntropy(P,Q)} &#x3D; - \sum_{i} P(i) · log(Q(i))<br>$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">approx_infoNCE_loss</span>(<span class="params">q, k</span>):</span><br><span class="line">    <span class="comment"># 计算query和key的相似度得分</span></span><br><span class="line">    similarity_scores = torch.matmul(q, k.t())  <span class="comment"># 矩阵乘法计算相似度得分</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算相似度得分的温度参数</span></span><br><span class="line">    temperature = <span class="number">0.07</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算logits</span></span><br><span class="line">    logits = similarity_scores / temperature</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 构建labels（假设有N个样本）</span></span><br><span class="line">    N = q.size(<span class="number">0</span>)</span><br><span class="line">    labels = torch.arange(N).to(logits.device)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算交叉熵损失</span></span><br><span class="line">    loss = F.cross_entropy(logits, labels)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> loss</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/12/11/LLaVA%E5%9F%BA%E4%BA%8Etransformers%E9%83%A8%E7%BD%B2/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2024-12-12 16:32:54
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" title="对比学习">
+                        #对比学习
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+              <a href="/2024/12/23/Ubuntu%E7%BE%8E%E5%8C%96/" target="_self">
+                <span>Next</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
         </div>
       
-      <div class="post-item" title="1231">
-        <div class="time-m-d">04-22</div>
-        <div class="title">
-          <a href="/2025/04/22/1231-1/">
-            <span>1231</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="1231">
-        <div class="time-m-d">04-22</div>
-        <div class="title">
-          <a href="/2025/04/22/1231/">
-            <span>1231</span>
-          </a>
-        </div>
-      </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Contrastive-learning"><span class="toc-text">Contrastive learning</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#infoNCE-Loss-Function"><span class="toc-text">infoNCE Loss Function</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Hello World">
-        <div class="time-m-d">04-22</div>
-        <div class="title">
-          <a href="/2025/04/22/hello-world/">
-            <span>Hello World</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -174,7 +279,7 @@
     
     <div class="footer-more">
       
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2025 Oranges</a>
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
         
     </div>
   
@@ -410,6 +515,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + %E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0 + '&url=' + http%3A%2F%2Fexample.com%2F2024%2F12%2F12%2F%25E5%25AF%25B9%25E6%25AF%2594%25E5%25AD%25A6%25E4%25B9%25A0%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2024/12/12/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>

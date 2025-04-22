@@ -9,18 +9,16 @@
   
   <!-- 用于搜索引擎的文章摘要 -->
   
-  <meta name="description" content="nothing to say" />
-  
   
   
   <title>
     
-      archive_a: 2025 
+      Ubuntu美化 
       
       
       |
     
-     Zhijiao
+     ZhiJiao
   </title>
 
   
@@ -110,50 +108,124 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2025</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Ubuntu美化</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2024-12-23 11:18:49
+        </span>
+        
+      </div>
+      <div class="markdown-body">
+        <p>记录一些Ubuntu美化日记, 使用的Ubuntu版本是WSL下的20.04.</p>
+<h5 id="The-Fuck"><a href="#The-Fuck" class="headerlink" title="The Fuck"></a>The Fuck</h5><p>Github : <a target="_blank" rel="noopener" href="https://github.com/nvbn/thefuck">https://github.com/nvbn/thefuck</a><br>对错误的 shell 命令进行矫正。</p>
+<h5 id="zsh-oh-my-zsh"><a href="#zsh-oh-my-zsh" class="headerlink" title="zsh &#x2F; oh-my-zsh"></a>zsh &#x2F; oh-my-zsh</h5><p>官方 : <a target="_blank" rel="noopener" href="https://ohmyz.sh/">https://ohmyz.sh/</a><br>Github ： <a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH">https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH</a><br>部分美化插件：<a target="_blank" rel="noopener" href="https://github.com/Firestar-Reimu/Arch-and-Manjaro-KDE-Installation">https://github.com/Firestar-Reimu/Arch-and-Manjaro-KDE-Installation</a></p>
+<p>美化终端</p>
+<h5 id="记录查询"><a href="#记录查询" class="headerlink" title="记录查询"></a>记录查询</h5><p>atuin : <a target="_blank" rel="noopener" href="https://github.com/atuinsh/atuin">https://github.com/atuinsh/atuin</a><br>记录用户之前使用过的指令</p>
+<h5 id="GPU管理"><a href="#GPU管理" class="headerlink" title="GPU管理"></a>GPU管理</h5><p>nvitop : <a target="_blank" rel="noopener" href="https://github.com/XuehaiPan/nvitop">https://github.com/XuehaiPan/nvitop</a><br>nvidia-smi的进阶版本</p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/12/12/%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2024-12-23 11:18:49
+            </span>
+            
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="1231">
-        <div class="time-m-d">04-22</div>
-        <div class="title">
-          <a href="/2025/04/22/1231-1/">
-            <span>1231</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="1231">
-        <div class="time-m-d">04-22</div>
-        <div class="title">
-          <a href="/2025/04/22/1231/">
-            <span>1231</span>
-          </a>
-        </div>
-      </div>
+  <div id="btn-catalog" class="btn-catalog">
+    <i class="iconfont icon-catalog"></i>
+  </div>
+  <div class="post-catalog hidden" id="catalog">
+    <div class="title">Contents</div>
+    <div class="catalog-content">
+      
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#The-Fuck"><span class="toc-text">The Fuck</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#zsh-oh-my-zsh"><span class="toc-text">zsh &#x2F; oh-my-zsh</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E6%9F%A5%E8%AF%A2"><span class="toc-text">记录查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#GPU%E7%AE%A1%E7%90%86"><span class="toc-text">GPU管理</span></a></li></ol>
+      
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
     
-      <div class="post-item" title="Hello World">
-        <div class="time-m-d">04-22</div>
-        <div class="title">
-          <a href="/2025/04/22/hello-world/">
-            <span>Hello World</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+
+
+
       </div>
     
   </div>
-</div>
+
 
         
 <div class="footer">
@@ -174,7 +246,7 @@
     
     <div class="footer-more">
       
-        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2025 Oranges</a>
+        <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © 2024 Oranges</a>
         
     </div>
   
@@ -410,6 +482,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Ubuntu%E7%BE%8E%E5%8C%96 + '&url=' + http%3A%2F%2Fexample.com%2F2024%2F12%2F23%2FUbuntu%25E7%25BE%258E%25E5%258C%2596%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://example.com/2024/12/23/Ubuntu%E7%BE%8E%E5%8C%96/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
