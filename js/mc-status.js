@@ -2,11 +2,13 @@
   function escapeHtml(s) {
     return s.replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   }
+
   async function fetchStatus(host, port) {
     const url = `https://api.mcsrvstat.us/2/${host}:${port}`;
     const res = await fetch(url, { cache: 'no-store' });
     return await res.json();
   }
+
   function render(container, data) {
     const online = data && data.online === true;
     const version = (Array.isArray(data?.version) ? data.version[0] : data?.version) || '-';
@@ -19,12 +21,19 @@
     const maxPlayers = data?.players?.max ?? '-';
     const list = Array.isArray(data?.players?.list) ? data.players.list : [];
     const uuids = data?.players?.uuid || {};
+
+    // 新增：服务器名称和是否显示 IP
+    const serverName = container.dataset.name || 'Minecraft 服务器';
+    const showIp = container.dataset.showIp !== 'false'; // 默认 true，设置为 false 则不显示
+
     container.innerHTML = `
       <div style="border:1px solid #e2e8f0;border-radius:12px;padding:12px">
         <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;">
           <div>
             <div style="color:#6b7280;font-size:12px">服务器</div>
-            <div style="font-family:ui-monospace,Consolas,monospace">${escapeHtml(container.dataset.host)}:${escapeHtml(container.dataset.port)}</div>
+            <div style="font-family:ui-monospace,Consolas,monospace">
+              ${escapeHtml(serverName)}${showIp ? ` (${escapeHtml(container.dataset.host)}:${escapeHtml(container.dataset.port)})` : ''}
+            </div>
           </div>
           <div>
             <div style="color:#6b7280;font-size:12px">版本</div>
@@ -42,10 +51,12 @@
         <div style="margin-top:8px;color:#94a3b8;font-size:12px">上次更新：<span data-ts></span></div>
       </div>
     `;
+
     const listEl = container.querySelector('[data-list]');
     const tsEl = container.querySelector('[data-ts]');
     tsEl.textContent = new Date().toLocaleString();
     listEl.innerHTML = '';
+
     if (!online || list.length === 0) {
       const empty = document.createElement('div');
       empty.style.color = '#9ca3af';
@@ -53,6 +64,7 @@
       listEl.appendChild(empty);
       return;
     }
+
     for (const name of list) {
       const uuid = uuids[name] || '';
       const wrap = document.createElement('div');
@@ -69,6 +81,7 @@
       wrap.appendChild(label);
       listEl.appendChild(wrap);
     }
+
     const missingCount = Math.max(0, (onlinePlayers || 0) - list.length);
     if (missingCount > 0) {
       for (let i = 0; i < missingCount; i++) {
@@ -90,6 +103,7 @@
       listEl.appendChild(hint);
     }
   }
+
   async function initOne(container) {
     const host = container.dataset.host;
     const port = container.dataset.port || '25565';
@@ -98,7 +112,10 @@
     try { render(container, await fetchStatus(host, port)); }
     catch { container.textContent = '加载失败'; }
   }
+
   function initAll() { document.querySelectorAll('[data-mc-status]').forEach(initOne); }
+
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll); else initAll();
+
   setInterval(() => { document.querySelectorAll('[data-mc-status]').forEach(initOne); }, 10000);
 })();
