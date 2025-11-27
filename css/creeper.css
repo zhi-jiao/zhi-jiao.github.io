@@ -1,0 +1,37 @@
+.creeper {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    background-color: #3aa635;
+    border-radius: 4px;
+    z-index: 99999;
+    cursor: grab;
+    user-select: none;
+}
+
+.creeper::before,
+.creeper::after {
+    content: "";
+    position: absolute;
+    background: #000;
+}
+
+ /* 左右眼 */
+.creeper::before {
+    width: 26px;
+    height: 26px;
+    top: 25px;
+    left: 20px;
+    box-shadow: 60px 0 #000; /* 右眼 */
+}
+
+ /* 嘴巴 */
+.creeper::after {
+    width: 26px;
+    height: 40px;
+    top: 52px;
+    left: 47px;
+    box-shadow:
+        -27px 0 #000,   /* 左下 */
+        27px 0 #000;    /* 右下 */
+}
