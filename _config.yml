@@ -1,0 +1,26 @@
+# Personal website. Edit homepage/_data/profile.yml for personal content.
+title: ZhiJiao
+subtitle: PhD student · Lanzhou University
+description: ZhiJiao is a PhD student at Lanzhou University, having also completed undergraduate and master's studies there. Current research focuses on neural networks and deep learning, with plans to explore world models.
+author: ZhiJiao
+language: en
+timezone: Asia/Shanghai
+url: https://zhi-jiao.github.io
+root: /
+
+# Former blog sources stay in source/ as an unpublished archive.
+source_dir: homepage
+public_dir: public
+default_layout: page
+theme: folio
+render_drafts: false
+syntax_highlighter: false
+post_asset_folder: false
+external_link:
+  enable: false
+meta_generator: true
+
+deploy:
+  type: git
+  repo: https://github.com/zhi-jiao/zhi-jiao.github.io.git
+  branch: master

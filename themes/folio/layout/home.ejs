@@ -1,0 +1,50 @@
+<% const p = site.data.profile; const publications = (site.data.scholar && site.data.scholar.publications && site.data.scholar.publications.length) ? site.data.scholar.publications : p.publications; %>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
+<main id="main" class="page">
+  <header class="profile-header" id="home" data-reveal>
+    <div class="profile-identity">
+      <% if (p.photo) { %><button class="profile-photo-button" type="button" aria-label="Say hello / 打个招呼"><img class="profile-photo" src="<%- url_for(p.photo) %>" alt="<%= p.name %>" width="360" height="360" decoding="async"></button><span class="photo-note" role="status" aria-live="polite"></span><% } %>
+      <div class="profile-text">
+      <h1><%= p.name %></h1>
+      <p class="affiliation"><%- bi(p.university) %> · <%= p.lab %></p>
+      <p class="role"><%- bi(p.role) %></p>
+      </div>
+    </div>
+    <button class="language-toggle" type="button" aria-label="Switch to English"><span data-lang="zh" lang="en">English</span><span data-lang="en" lang="zh-CN">中文</span></button>
+  </header>
+
+  <div class="introduction" data-reveal>
+    <p><%- bi(p.intro) %></p>
+    <p><%- bi(p.about) %></p>
+    <p class="research"><%- bi('Research interests: ', '研究方向：') %><% p.research.forEach((r, i) => { %><% if (i) { %><%- bi(', ', '、') %><% } %><%- bi(r.title) %><% }) %><%- bi('.', '。') %></p>
+    <div class="contact">
+      <a href="mailto:<%= p.email %>"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2.5" y="4" width="15" height="12" rx="2"/><path d="m3 5 7 5.5L17 5"/></svg><%= p.email %></a>
+      <a href="<%= p.github %>" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.3"><path d="m7 5-5 5 5 5m6-10 5 5-5 5M11 3 9 17"/></svg>GitHub</a>
+    </div>
+  </div>
+
+  <section class="publications" id="publications" aria-labelledby="publications-title" data-reveal>
+    <div class="section-heading">
+      <h2 id="publications-title"><%- bi('Publications', '学术论文') %><span class="paper-count" aria-hidden="true"><%= publications.length %></span></h2>
+      <% if (p.scholar) { %><a class="scholar-link" href="<%= p.scholar %>" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 8.2 10 4l7.5 4.2L10 12.4 2.5 8.2Z"/><path d="M5 10.1v3.2c2.7 2.1 7.3 2.1 10 0v-3.2M17.5 8.2v5.1"/></svg><%- bi('Google Scholar', 'Google Scholar') %></a><% } %>
+    </div>
+    <ol class="publication-list">
+      <% publications.forEach(paper => { %>
+      <li class="publication" data-reveal>
+        <p class="paper-title" lang="en"><% if (paper.doi) { %><a href="https://doi.org/<%= paper.doi %>" target="_blank" rel="noopener noreferrer"><%= paper.title %></a><% } else { %><%= paper.title %><% } %></p>
+        <% if (paper.translation) { %><p class="paper-translation" data-lang="zh" lang="zh-CN"><%= paper.translation %></p><% } %>
+        <p class="authors" lang="en"><% paper.authors.forEach((author, i) => { %><% if (i) { %>, <% } %><% if (author === p.publication_name) { %><strong><%= author %></strong><% } else { %><%= author %><% } %><% }) %></p>
+        <p class="publication-details" lang="en"><cite><%= paper.venue %></cite><% if (paper.year) { %>, <%= paper.year %><% } %><% if (paper.detail) { %> · <%= paper.detail %><% } %><% if (paper.doi) { %> <a class="doi-link" href="https://doi.org/<%= paper.doi %>" target="_blank" rel="noopener noreferrer" aria-label="DOI: <%= paper.title %>">DOI</a><% } %></p>
+      </li>
+      <% }) %>
+    </ol>
+  </section>
+  <footer><span>© <%= new Date().getFullYear() %> <%= p.name %></span><span><%- bi(p.university) %></span></footer>
+</main>
+<div class="creeper-pet-layer">
+  <button class="creeper-pet" type="button" aria-label="和苦力怕打招呼" title="点击苦力怕互动">
+    <span class="creeper-face" aria-hidden="true"></span>
+    <canvas class="creeper-canvas" width="96" height="96" aria-hidden="true"></canvas>
+  </button>
+  <span class="creeper-bubble" role="status" aria-live="polite"></span>
+</div>

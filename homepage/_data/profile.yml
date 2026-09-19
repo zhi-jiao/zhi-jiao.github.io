@@ -1,0 +1,61 @@
+# 中英双语个人主页内容。论文信息沿用原 About 页面；不由 DOI 推断发表年份。
+name: ZhiJiao
+photo: /images/portrait.jpg
+publication_name: Z. Su
+role:
+  en: PhD student
+  zh: 博士研究生
+lab: DSLab
+university:
+  en: Lanzhou University
+  zh: 兰州大学
+location:
+  en: Lanzhou, China
+  zh: 中国 · 兰州
+email: zhsu20@lzu.edu.cn
+github: https://github.com/zhi-jiao
+scholar: https://scholar.google.com/citations?user=Sa9e9icAAAAJ&hl=en
+intro:
+  en: I am a PhD student at Lanzhou University, where I also completed my bachelor's and master's degrees. My current research focuses on neural networks and deep learning, with plans to explore world models.
+  zh: 我目前在兰州大学攻读博士学位，本科和硕士也均就读于兰州大学。目前主要研究神经网络与深度学习，后续计划探索世界模型。
+about:
+  en: I mainly use Python, PyTorch, and TensorFlow. Outside of research, I enjoy listening to music.
+  zh: 平时主要使用 Python、PyTorch 和 TensorFlow，研究之余喜欢听音乐。
+research:
+  - title: { en: Neural networks, zh: 神经网络 }
+  - title: { en: Deep learning, zh: 深度学习 }
+  - title: { en: World models (future direction), zh: 世界模型（后续方向） }
+publications:
+  - title: 'KANFIS: A Neuro-Symbolic Framework for Interpretable and Uncertainty-Aware Learning'
+    translation: 面向可解释与不确定性感知学习的神经符号框架
+    authors: ['B. Yong', 'H. Pei', 'J. Shen', 'H. Li', 'Q. Zhou', 'Z. Su']
+    venue: ICML
+    year: 2026
+    type: conference
+    detail: International Conference on Machine Learning
+  - title: 'SL-ANFIS-LSTM: A Structure Learnable Fuzzy Neural Network for Ultra-Short-Term PV Power Forecasting'
+    translation: 用于超短期光伏功率预测的结构可学习模糊神经网络
+    authors: ['Z. Su', 'J. Shen', 'Q. Zhou', 'B. Yong']
+    venue: IEEE Transactions on Fuzzy Systems
+    type: journal
+    doi: 10.1109/TFUZZ.2025.3604847
+  - title: Deep Learning Empowered Detection of Large Language Model Based Generative Content in Educational Tasks
+    translation: 基于深度学习的教育任务中大语言模型生成内容检测
+    authors: ['Z. Su', 'J. Shen', 'Q. Zhou', 'B. Yong']
+    venue: IEEE Transactions on Learning Technologies
+    type: journal
+    doi: 10.1109/TLT.2025.3626545
+  - title: Deep Spatio-Temporal Fuzzy Model for NDVI Forecasting
+    translation: 用于归一化植被指数预测的深度时空模糊模型
+    authors: ['Z. Su', 'J. Shen', 'Y. Sun', 'R. Hu', 'Q. Zhou', 'B. Yong']
+    venue: IEEE Transactions on Fuzzy Systems
+    year: 2025
+    type: journal
+    detail: 'Vol. 33, no. 1, pp. 290–301'
+    doi: 10.1109/TFUZZ.2024.3409894
+  - title: 'FoodFlavorNet: A Multimodal Deep Learning Model for Food Flavor Recognition'
+    translation: 用于食物风味识别的多模态深度学习模型
+    authors: ['Z. Su', 'J. Shen', 'Q. Zhou', 'B. Yong']
+    venue: IEEE Transactions on Consumer Electronics
+    type: journal
+    doi: 10.1109/TCE.2024.3476341

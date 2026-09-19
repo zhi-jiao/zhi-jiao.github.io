@@ -1,0 +1,34 @@
+# Generated from Google Scholar. Do not edit manually.
+publications:
+  - title: "Deep spatio-temporal fuzzy model for NDVI forecasting"
+    authors: ["Z Su","J Shen","Y Sun","R Hu","Q Zhou","B Yong"]
+    venue: "IEEE Transactions on Fuzzy Systems 33 (1), 290-301, 2024"
+    year: 2024
+  - title: "Foodflavornet: A multimodal deep learning model for food flavor recognition"
+    authors: ["Z Su","J Shen","Q Zhou","B Yong"]
+    venue: "IEEE Transactions on Consumer Electronics 71 (2), 6829-6838, 2024"
+    year: 2024
+  - title: "SL-ANFIS-LSTM: A structure learnable fuzzy neural network for ultra-short-term PV power forecasting"
+    authors: ["Z Su","J Shen","Q Zhou","B Yong"]
+    venue: "IEEE Transactions on Fuzzy Systems, 2025"
+    year: 2025
+  - title: "KANFIS: A Neuro-Symbolic Framework for Interpretable and Uncertainty-Aware Learning"
+    authors: ["B Yong","H Pei","J Shen","H Li","Q Zhou","Z Su"]
+    venue: "arXiv preprint arXiv:2602.03034, 2026"
+    year: 2026
+  - title: "Deep-learning-empowered detection of large-language-model-based generative content in educational tasks"
+    authors: ["Z Su","J Shen","Q Zhou","B Yong"]
+    venue: "IEEE Transactions on Learning Technologies 18, 1036-1047, 2025"
+    year: 2025
+  - title: "Fuzzy-MoE: Interpretable Regime-Conditioned Expert Routing for Non-Stationary Multivariate Time Series Forecasting"
+    authors: ["L Guo","J Xiao","Z Su","J Shen","H Li","W Ma","Q Zhou","B Yong"]
+    venue: "arXiv preprint arXiv:2608.20761, 2026"
+    year: 2026
+  - title: "HYDRA: Hyperbolic Dynamic Representation Architecture for Kolmogorov-Arnold Networks"
+    authors: ["Z Su","Y Xia","H Li","J Shen","Q Zhu","Q Zhou","B Yong"]
+    venue: "arXiv preprint arXiv:2608.12194, 2026"
+    year: 2026
+  - title: "HyperANFIS: Enhancing Rule Representation and Interpretability in Adaptive Neuro-Fuzzy Systems via Hyperbolic Geometry"
+    authors: ["H Pei","Z Su","Z Lin","H Li","J Shen","Q Zhu","L Guo","Q Zhou","B Yong"]
+    venue: "arXiv preprint arXiv:2608.11768, 2026"
+    year: 2026

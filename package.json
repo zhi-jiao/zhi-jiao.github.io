@@ -1,0 +1,23 @@
+{
+  "name": "zhijiao-personal-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "sync-scholar": "node sync-scholar.js",
+    "build": "npm run sync-scholar && hexo clean && hexo generate",
+    "clean": "hexo clean",
+    "deploy": "npm run build && hexo deploy",
+    "server": "hexo server"
+  },
+  "hexo": {
+    "version": "7.3.0"
+  },
+  "dependencies": {
+    "hexo": "^7.3.0",
+    "hexo-deployer-git": "^4.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^7.0.0",
+    "hexo-server": "^3.0.0",
+    "three": "^0.186.0"
+  }
+}

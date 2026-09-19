@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN" data-title-en="<%= config.title %> — Personal homepage" data-title-zh="<%= config.title %> — 个人主页">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="<%= config.description %>">
+  <meta name="author" content="<%= config.author %>">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%= config.title %> — <%= config.subtitle %>">
+  <meta property="og:description" content="<%= config.description %>">
+  <meta property="og:url" content="<%= config.url %>/">
+  <title><%= config.title %> — 个人主页</title>
+  <link rel="canonical" href="<%= config.url %>/">
+  <link rel="icon" type="image/svg+xml" href="<%- url_for('/images/favicon.svg') %>">
+  <script>
+    // Apply the saved language before first paint. Storage may be unavailable.
+    try { if (localStorage.getItem('profile-language') === 'en') document.documentElement.lang = 'en'; } catch (_) {}
+  </script>
+  <link rel="stylesheet" href="<%- url_for('/css/site.css') %>">
+  <script src="<%- url_for('/js/site.js') %>" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main"><%- bi('Skip to content', '跳转到正文') %></a>
+  <%- body %>
+</body>
+</html>
